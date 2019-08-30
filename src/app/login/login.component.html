@@ -1,0 +1,61 @@
+<div class="loginContainer">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-3">
+                <div class="avatarFrameofline marto15 marbo15 ">
+                    <img class="avatarImage img-fluid" src="assets/img/generic_avatar.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <div class="center">
+                    <h3>Iniciar Sesión</h3>
+                </div>
+                <form #formLogin="ngForm" (submit)="onLogin()">
+                <p *ngIf="operation=='register'">Ya tienes Cuenta? has <a (click)="operation = 'login'" >Login</a></p>
+                <p *ngIf="operation=='login'">No tienes Cuenta? <a (click)="operation = 'register'" >Registrate!</a></p>
+                <div class="boreredContainer">
+                <div class="form-group">
+                <input [(ngModel)]="email" type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                <input [(ngModel)]="password" type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                <input *ngIf="operation=='register'" class="form-control marbo15" type="text" placeholder="Ingrese Nick"/>
+                </div>
+                <div class="center marto15">
+                    
+                    <button *ngIf="operation=='login'" type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                    <a *ngIf="operation=='register'" class="btn btn-primary" >Registrarme</a>
+                </div>
+                </form>
+                <!--form para login 
+
+                <form #formLogin="ngForm" (submit)="onLogin()">
+                    <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Login</h1>
+                    <div class="alert alert-danger" role="alert" *ngIf="isError">
+                      Something is wrong!
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="email" type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="password" type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                    <div class="form-group">
+                      <a routerLink="/user/register" class="form-control login-user">Are you new ?</a>
+                    </div>
+                  </form>-->
+
+
+
+                <!--termina form-->
+
+            </div>            
+        </div>
+    </div>
+</div>
+
+
